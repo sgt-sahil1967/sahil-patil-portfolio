@@ -30,10 +30,15 @@ function initNavigation() {
     
     // Navbar scroll effect
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
+        const homeSection = document.getElementById('home');
+        const homeSectionHeight = homeSection ? homeSection.offsetHeight : 0;
+        
+        if (window.scrollY > homeSectionHeight - 100) {
             navbar.classList.add('scrolled');
+            navbar.classList.remove('navbar-hidden');
         } else {
             navbar.classList.remove('scrolled');
+            navbar.classList.add('navbar-hidden');
         }
     });
     
