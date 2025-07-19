@@ -5,16 +5,17 @@
       "src": "main.py",
       "use": "@vercel/python",
       "config": { "pythonVersion": "3.9" }
+    },
+    {
+      "src": "static/**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     { "src": "/static/(.*)", "dest": "static/$1" },
     { "src": "/(.*)",        "dest": "main.py" }
   ],
-  // replicate your UI “Install Command” here:
   "installCommand": "pip install -r requirements.txt",
-  // if you had a “Build Command” in the UI, put it here:
-  "buildCommand": "",             
-  // and same for Dev:
+  "buildCommand": "echo \"No build step needed\"",
   "devCommand": "vercel dev"
 }
