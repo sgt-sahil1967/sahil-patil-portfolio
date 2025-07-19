@@ -359,7 +359,135 @@ window.addEventListener('scroll', throttledScroll);
 // Theme Cube Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const themeCube = document.getElementById('themeCube');
-    let currentTheme = 'yellow';
+    let currentThemeIndex = 0;
+    let themes = [];
+    let isTransitioning = false;
+    
+    // Load themes from JSON file
+    fetch('/static/themes.json')
+        .then(response => response.json())
+        .then(data => {
+            themes = Object.keys(data).map(key => ({
+                name: key,
+                ...data[key]
+            }));
+            console.log('Loaded themes:', themes.length);
+        })
+        .catch(error => {
+            console.error('Error loading themes:', error);
+            // Fallback themes if JSON fails to load
+            themes = [
+                {
+                    name: 'yellow-theme',
+                    background: 'static/images/bg-yellow.webp',
+                    colors: {
+                        dominant: '#ffd700',
+                        palette: ['#ffd700', '#ffeb3b', '#c09f5d', '#7c6139', '#998d6a', '#97836c']
+                    }
+                },
+                {
+                    name: 'orange-theme',
+                    background: 'static/images/bg-orange.webp',
+                    colors: {
+                        dominant: '#d2a38d',
+                        palette: ['#d2a38d', '#9c5b4d', '#8fa991', '#4f292c', '#6d8cb0', '#726973']
+                    }
+                },
+                {
+                    name: 'purple-theme',
+                    background: 'static/images/bg-purple.webp',
+                    colors: {
+                        dominant: '#a18dbc',
+                        palette: ['#a18dbc', '#e19dac', '#6766b3', '#acb2e1', '#755ca5', '#60637a']
+                    }
+                },
+                {
+                    name: 'blue-theme',
+                    background: 'static/images/bg-blue.webp',
+                    colors: {
+                        dominant: '#779dbe',
+                        palette: ['#779dbe', '#d5c3b6', '#444f44', '#948a7c', '#9bbad2', '#6c8a93']
+                    }
+                },
+                {
+                    name: 'green-theme',
+                    background: 'static/images/bg-green.webp',
+                    colors: {
+                        dominant: '#775e5b',
+                        palette: ['#775e5b', '#5a4448', '#2a1c2e', '#3b2958', '#523a76', '#6b645c']
+                    }
+                }
+            ];
+        });
+    
+    function switchTheme() {
+        if (isTransitioning || themes.length === 0) return;
+        
+        isTransitioning = true;
+        document.body.classList.add('theme-transitioning');
+        
+        // Move to next theme
+        currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+        const newTheme = themes[currentThemeIndex];
+        
+        console.log(`Switching to ${newTheme.name}`, newTheme.colors.dominant);
+        
+        // Update CSS custom properties
+        const root = document.documentElement;
+        const colors = newTheme.colors;
+        
+        root.style.setProperty('--current-bg', `url('${newTheme.background}')`);
+        root.style.setProperty('--accent-color', colors.dominant);
+        root.style.setProperty('--primary-color', colors.dominant);
+        root.style.setProperty('--secondary-color', colors.palette[1] || colors.dominant);
+        root.style.setProperty('--theme-secondary', colors.palette[2] || colors.palette[1]);
+        root.style.setProperty('--theme-tertiary', colors.palette[3] || colors.palette[0]);
+        
+        // Update gradient colors
+        root.style.setProperty('--gradient-primary', `linear-gradient(135deg, ${colors.dominant} 0%, ${colors.palette[1]} 100%)`);
+        root.style.setProperty('--gradient-accent', `linear-gradient(135deg, ${colors.dominant} 0%, ${colors.palette[1]} 100%)`);
+        
+        // Update shadow colors (extract RGB from hex for rgba)
+        const hexToRgb = (hex) => {
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? {
+                r: parseInt(result[1], 16),
+                g: parseInt(result[2], 16),
+                b: parseInt(result[3], 16)
+            } : null;
+        };
+        
+        const dominantRgb = hexToRgb(colors.dominant);
+        if (dominantRgb) {
+            root.style.setProperty('--shadow-light', `0 5px 15px rgba(${dominantRgb.r}, ${dominantRgb.g}, ${dominantRgb.b}, 0.2)`);
+            root.style.setProperty('--shadow-medium', `0 10px 30px rgba(${dominantRgb.r}, ${dominantRgb.g}, ${dominantRgb.b}, 0.3)`);
+            root.style.setProperty('--shadow-heavy', `0 20px 60px rgba(${dominantRgb.r}, ${dominantRgb.g}, ${dominantRgb.b}, 0.4)`);
+        }
+        
+        // Update navbar toggler icon color
+        const togglerSvg = `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='${encodeURIComponent(colors.dominant)}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")`;
+        root.style.setProperty('--navbar-toggler-icon', togglerSvg);
+        
+        // Update cube colors to match new theme
+        const cubes = themeCube.querySelectorAll('.cube-face');
+        cubes.forEach(face => {
+            face.style.borderColor = colors.dominant;
+            face.style.background = `rgba(${dominantRgb?.r || 255}, ${dominantRgb?.g || 105}, ${dominantRgb?.b || 180}, 0.1)`;
+            face.style.boxShadow = `0 0 20px rgba(${dominantRgb?.r || 255}, ${dominantRgb?.g || 105}, ${dominantRgb?.b || 180}, 0.3)`;
+        });
+        
+        const dots = themeCube.querySelectorAll('.cube-dot');
+        dots.forEach(dot => {
+            dot.style.background = colors.dominant;
+            dot.style.boxShadow = `0 0 10px rgba(${dominantRgb?.r || 255}, ${dominantRgb?.g || 105}, ${dominantRgb?.b || 180}, 0.6)`;
+        });
+        
+        // Remove transition class after animation completes
+        setTimeout(() => {
+            document.body.classList.remove('theme-transitioning');
+            isTransitioning = false;
+        }, 800);
+    }
     
     if (themeCube) {
         themeCube.addEventListener('click', function() {
@@ -370,26 +498,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Reset transform
                 this.style.transform = 'scale(1) rotateX(45deg) rotateY(45deg)';
                 
-                // Prepare for theme switching - will be implemented when user provides new theme
-                console.log('Theme cube clicked - ready for theme switch');
-                
-                // Add a visual feedback
-                const cubes = this.querySelectorAll('.cube-face');
-                cubes.forEach(face => {
-                    face.style.background = 'rgba(255, 192, 203, 0.3)';
-                    face.style.borderColor = '#ff1493';
-                    setTimeout(() => {
-                        face.style.background = 'rgba(255, 192, 203, 0.1)';
-                        face.style.borderColor = '#ff69b4';
-                    }, 300);
-                });
+                // Switch theme
+                switchTheme();
                 
             }, 150);
         });
         
-        // Add hover sound effect simulation
+        // Add hover effect
         themeCube.addEventListener('mouseenter', function() {
-            console.log('Theme cube hovered');
+            this.style.animationPlayState = 'paused';
+        });
+        
+        themeCube.addEventListener('mouseleave', function() {
+            this.style.animationPlayState = 'running';
         });
     }
 });

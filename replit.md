@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a personal portfolio website for Sahil Patil, a Jr. Web Developer specializing in Flask, WordPress, and Shopify development. The application is built using Flask as the backend framework with a modern frontend featuring Bootstrap 5, Three.js animations, and responsive design.
+This is a personal portfolio website for Sahil Patil, a Jr. Web Developer specializing in Flask, WordPress, and Shopify development. The application is built using Flask as the backend framework with a modern frontend featuring Bootstrap 5, advanced theme switching capabilities, and responsive design. The website now includes a dynamic theme system with 5 different color schemes extracted from compressed WebP background images.
 
 ## User Preferences
 
@@ -42,16 +42,24 @@ Preferred communication style: Simple, everyday language.
    - SEO-optimized meta tags
    - Loading screen implementation
    - Navigation with Bootstrap components
+   - 3D glass cube theme switcher with pink edges and animated dots
 
 2. **Styling (`static/css/style.css`)**
-   - CSS custom properties for consistent theming
-   - Professional color scheme (brown/gold palette)
+   - CSS custom properties for dynamic theming system
+   - 5 different color themes (yellow, orange, purple, blue, green)
+   - Smooth theme transition animations
    - Responsive design patterns
-   - Animation and transition definitions
+   - 3D cube animations and hover effects
 
 3. **JavaScript Functionality**
-   - **Main Script (`static/js/script.js`)**: Core functionality including loader, navigation, scroll animations, and smooth scrolling
-   - **Three.js Scene (`static/js/three-scene.js`)**: 3D background animations with floating geometric shapes
+   - **Main Script (`static/js/script.js`)**: Core functionality including loader, navigation, scroll animations, smooth scrolling, and complete theme switching system
+   - **Theme System**: Dynamic color extraction and application with JSON-based theme data
+   - **3D Cube Interactions**: Click-to-switch themes with visual feedback
+
+4. **Image Assets**
+   - **WebP Optimized Backgrounds**: 5 compressed background images converted from original photos
+   - **Color Extraction**: Primary and palette colors extracted from each image using ColorThief
+   - **Performance Optimized**: Images compressed to ~73KB-581KB for fast loading
 
 ## Data Flow
 

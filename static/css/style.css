@@ -15,6 +15,14 @@
     --shadow-heavy: 0 20px 60px rgba(255, 215, 0, 0.4);
     --transition: all 0.3s ease;
     --border-radius: 12px;
+    --current-bg: url('../images/bg-yellow.webp');
+    --theme-secondary: #c09f5d;
+    --theme-tertiary: #7c6139;
+}
+
+/* Theme transition class */
+body.theme-transitioning * {
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
 /* Global Styles */
@@ -78,12 +86,13 @@ body::before {
     bottom: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('../images/hero-bg.jpg');
+    background-image: var(--current-bg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     z-index: -1000;
+    transition: background-image 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* Typography */
@@ -201,7 +210,7 @@ a {
 }
 
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 215, 0, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-image: var(--navbar-toggler-icon, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 215, 0, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"));
 }
 
 /* Hero Section */
