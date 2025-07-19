@@ -11,5 +11,10 @@
     { "src": "/static/(.*)", "dest": "static/$1" },
     { "src": "/(.*)",        "dest": "main.py" }
   ],
-  "installCommand": "pip install -r requirements.txt"
+  // replicate your UI “Install Command” here:
+  "installCommand": "pip install -r requirements.txt",
+  // if you had a “Build Command” in the UI, put it here:
+  "buildCommand": "",             
+  // and same for Dev:
+  "devCommand": "vercel dev"
 }
