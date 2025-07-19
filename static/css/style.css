@@ -24,8 +24,40 @@
     box-sizing: border-box;
 }
 
+/* Force no background on all elements */
+*, *::before, *::after {
+    background-color: transparent !important;
+}
+
+/* Exception for specific elements that need backgrounds */
+.navbar,
+.skill-category,
+.timeline-content,
+.project-card,
+.contact-content,
+.footer,
+.section.bg-light,
+#loading-screen,
+.loader,
+.loader-inner {
+    background-color: initial !important;
+}
+
+/* Ensure Bootstrap and other framework backgrounds are transparent */
+.container, .container-fluid, .row, .col, .col-*, 
+[class*="col-"], [class*="container"], [class*="row"] {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
 html {
     scroll-behavior: smooth;
+    background: transparent !important;
+}
+
+html, body, #root, [id*="__next"], [class*="App"], [class*="Layout"], main, section, div, article, header, footer, aside {
+    background: transparent !important;
+    background-color: transparent !important;
 }
 
 body {
@@ -42,14 +74,16 @@ body::before {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
     height: 100vh;
     background-image: url('../images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    z-index: -1;
+    z-index: -1000;
 }
 
 /* Typography */
