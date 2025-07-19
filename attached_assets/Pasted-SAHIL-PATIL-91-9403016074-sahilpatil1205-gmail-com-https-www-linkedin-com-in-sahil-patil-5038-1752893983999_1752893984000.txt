@@ -1,0 +1,42 @@
+SAHIL PATIL
++91 9403016074 | sahilpatil1205@gmail.com | https://www.linkedin.com/in/sahil-patil-50388222a | Nashik - Pune
+PROFESSIONAL SUMMARY
+Results-driven Jr. Web Developer with 1.5 years of hands-on experience in front-end and backend development, specializing in Flask, WordPress, and Shopify. Eager to apply expertise in crafting fully customized, high-performance e-commerce solutions and intuitive user experiences to a dynamic team. Passionate about transforming design concepts into functional, visually appealing websites that drive engagement and business growth.
+SKILLS
+Web Platforms & CMS: WordPress, Shopify, WooCommerce, Carrd, Hostinger
+Front-End Technologies: HTML, CSS, JavaScript, React
+Back-End Technologies: Python (Flask), MySQL
+Design & Multimedia: Figma, UI/UX Design, DaVinci Resolve, Photopea, Product Photography
+Digital Marketing & Analytics: MailChimp, Meta AD Manager, SEO, Performance Boosting
+Tools & Version Control: Git
+Key Competencies: Payment Gateway Integration, Project Management, Problem-Solving, Creative Freedom, Customer Support
+WORK EXPERIENCE
+Shopify Developer, Content Producer & Ads Management | Papillon Ethinics (via agency) | Pune
+November 2024 – May 2025 (6 Months)
+Developed and launched a fully customized Shopify e-commerce website from scratch with a user-friendly and appealing interface, specifically tailored for mothers, significantly enhancing the online presence for Papillon Ethinics.
+Implemented sales-driving campaigns and managed Meta Ads, contributing to increased product visibility and customer engagement.
+Managed content production to ensure high-quality product presentation and brand consistency.
+Jr. Developer (Internship) | Legismith Partners LLP | Pune
+August 2024 – October 2024 (3 Months)
+Re-developed a WordPress Elementor website from scratch, ensuring modern design standards, improved functionality, and a seamless user experience.
+Optimized website for Search Engine Optimization (SEO), contributing to enhanced online visibility.
+EDUCATION
+Bachelor of Engineering in Computer Engineering
+K K Wagh Institute of Engineering Education & Research | Nashik, Maharashtra
+Expected Graduation: 2027 (Currently in 3rd Year)
+PROJECTS & PORTFOLIO
+[cite_start]Portfolio Website: https://sahil-patil.carrd.co/  
+[cite_start]Legismith LLP Website: https://legismith.com/ (Developed during internship)  
+[cite_start]Papillon Ethinics Website: https://papillonethinics.com/ (Developed for client)  
+Banarsi Bling: Designed and developed a Shopify store and conducted product photography for this jewelry brand, enhancing their online presence and visual appeal.
+UniSwap (University Specific Marketplace):
+Developed a university-specific marketplace to facilitate student transactions and community engagement.
+[cite_start]GitHub Repository: https://github.com/sgt-sahil1967/UniSwap  
+[cite_start]Moorish Rivera (QR Code Menu for a Restaurant): Designed and implemented a digital QR code menu system to modernize restaurant operations.  
+OMS (Order Management System) for Restaurant: Developed an Order Management System to streamline restaurant operations and order processing.
+GitHub Repository: https://github.com/sgt-sahil1967/kkw_major_project
+Final Check:
+ATS Keywords: We've incorporated "WordPress," "Shopify," "Website Developer," "front-end," "backend," "Flask," "React," "SEO," "UI/UX," "customized," and many other relevant terms from the job brochure.
+Formatting: The resume uses clear headings, bullet points, and standard font styles, making it easily scannable by ATS.
+Quantifiable Achievements: Where possible, we've used action verbs and hinted at impact (e.g., "significantly enhancing," "contributing to increased product visibility").
+Readability: It's designed to be easy for a human recruiter to read as well.

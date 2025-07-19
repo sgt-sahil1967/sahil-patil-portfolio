@@ -1,0 +1,125 @@
+Create a new web project in Replit.
+Language/Framework Preference: Python (Flask) with HTML, CSS, and JavaScript.
+Project Goal: Set up a basic web server structure to host a personal portfolio website.
+Include:
+
+A main index.html file as the homepage.
+
+A style.css file for styling.
+
+A script.js file for any interactive elements.
+
+A main.py (or similar) file to run a simple Flask server that serves these static files.
+Initial Content for index.html (Placeholder):
+
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Patil - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sahil Patil</h1>
+        <p>Web Developer - WordPress & Shopify Specialist</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>A passionate web developer skilled in front-end and back-end technologies, with a focus on creating dynamic and user-centric web solutions.</p>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            </section>
+        <section id="experience">
+            <h2>Experience</h2>
+            </section>
+        <section id="projects">
+            <h2>Projects & Portfolio</h2>
+            </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: sahilpatil1205@gmail.com | LinkedIn: [Your LinkedIn URL]</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Sahil Patil. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+Initial Content for style.css (Basic):
+
+CSS
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+nav ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    background: #555;
+}
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+main {
+    padding: 20px;
+    max-width: 960px;
+    margin: auto;
+    background: #fff;
+}
+section {
+    margin-bottom: 20px;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+}
+Initial Content for main.py (Flask Server):
+
+Python
+
+from flask import Flask, render_template, send_from_directory
+
+app = Flask(__name__, static_folder='.', static_url_path='')
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080) # Or whatever port Replit uses by default
+Instructions for me after setup: Guide me on how to fill in my detailed resume content into the index.html file using appropriate HTML tags for sections, skills, experience bullet points, and project links.
