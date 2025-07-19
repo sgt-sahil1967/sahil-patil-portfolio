@@ -32,12 +32,9 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--white);
-    background-image: url('../images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: transparent;
     overflow-x: hidden;
+    position: relative;
 }
 
 body::before {
@@ -51,8 +48,7 @@ body::before {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    z-index: -1;
+    z-index: -2;
 }
 
 /* Typography */
@@ -452,20 +448,9 @@ a {
 }
 
 .section.bg-light {
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(15px);
-    position: relative;
-}
-
-.section.bg-light::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background: rgba(0, 0, 0, 0.3);
-    z-index: -1;
+    backdrop-filter: blur(5px);
+    position: relative;
 }
 
 .section-header {
