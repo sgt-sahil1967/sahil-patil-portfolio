@@ -355,3 +355,41 @@ const throttledScroll = throttle(function() {
 }, 16); // ~60fps
 
 window.addEventListener('scroll', throttledScroll);
+
+// Theme Cube Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const themeCube = document.getElementById('themeCube');
+    let currentTheme = 'yellow';
+    
+    if (themeCube) {
+        themeCube.addEventListener('click', function() {
+            // Add click animation
+            this.style.transform = 'scale(0.9) rotateX(180deg) rotateY(180deg)';
+            
+            setTimeout(() => {
+                // Reset transform
+                this.style.transform = 'scale(1) rotateX(45deg) rotateY(45deg)';
+                
+                // Prepare for theme switching - will be implemented when user provides new theme
+                console.log('Theme cube clicked - ready for theme switch');
+                
+                // Add a visual feedback
+                const cubes = this.querySelectorAll('.cube-face');
+                cubes.forEach(face => {
+                    face.style.background = 'rgba(255, 192, 203, 0.3)';
+                    face.style.borderColor = '#ff1493';
+                    setTimeout(() => {
+                        face.style.background = 'rgba(255, 192, 203, 0.1)';
+                        face.style.borderColor = '#ff69b4';
+                    }, 300);
+                });
+                
+            }, 150);
+        });
+        
+        // Add hover sound effect simulation
+        themeCube.addEventListener('mouseenter', function() {
+            console.log('Theme cube hovered');
+        });
+    }
+});
