@@ -1,18 +1,18 @@
 /* Root Variables */
 :root {
-    --primary-color: #d4a574;
-    --secondary-color: #8b4513;
+    --primary-color: #ffd700;
+    --secondary-color: #ffeb3b;
     --accent-color: #ffd700;
     --dark-color: #2c1810;
-    --light-color: #f8f6f0;
+    --light-color: rgba(255, 255, 255, 0.1);
     --white: #ffffff;
-    --text-dark: #333333;
-    --text-light: #666666;
-    --gradient-primary: linear-gradient(135deg, #d4a574 0%, #8b4513 100%);
-    --gradient-accent: linear-gradient(135deg, #ffd700 0%, #d4a574 100%);
-    --shadow-light: 0 5px 15px rgba(212, 165, 116, 0.1);
-    --shadow-medium: 0 10px 30px rgba(212, 165, 116, 0.2);
-    --shadow-heavy: 0 20px 60px rgba(212, 165, 116, 0.3);
+    --text-dark: #ffffff;
+    --text-light: rgba(255, 255, 255, 0.9);
+    --gradient-primary: linear-gradient(135deg, #ffd700 0%, #ffeb3b 100%);
+    --gradient-accent: linear-gradient(135deg, #ffd700 0%, #ffeb3b 100%);
+    --shadow-light: 0 5px 15px rgba(255, 215, 0, 0.2);
+    --shadow-medium: 0 10px 30px rgba(255, 215, 0, 0.3);
+    --shadow-heavy: 0 20px 60px rgba(255, 215, 0, 0.4);
     --transition: all 0.3s ease;
     --border-radius: 12px;
 }
@@ -31,13 +31,28 @@ html {
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    color: var(--text-dark);
+    color: var(--white);
     background-image: url('../images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -1;
 }
 
 /* Typography */
@@ -49,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
     margin-bottom: 1rem;
-    color: var(--text-light);
+    color: var(--white);
 }
 
 a {
@@ -99,9 +114,9 @@ a {
 
 /* Navigation */
 .navbar {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(212, 165, 116, 0.1);
+    border-bottom: 2px solid var(--accent-color);
     padding: 1rem 0;
     transition: var(--transition);
     transform: translateY(0);
@@ -113,7 +128,7 @@ a {
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(0, 0, 0, 0.9);
     box-shadow: var(--shadow-light);
     transform: translateY(0);
     opacity: 1;
@@ -122,18 +137,15 @@ a {
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-color) !important;
+    color: var(--accent-color) !important;
 }
 
 .brand-text {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--accent-color);
 }
 
 .navbar-nav .nav-link {
-    color: var(--text-dark) !important;
+    color: var(--white) !important;
     font-weight: 500;
     margin: 0 0.5rem;
     padding: 0.5rem 1rem !important;
@@ -144,8 +156,8 @@ a {
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-    color: var(--primary-color) !important;
-    background: rgba(212, 165, 116, 0.1);
+    color: var(--accent-color) !important;
+    background: rgba(255, 215, 0, 0.2);
 }
 
 .navbar-toggler {
@@ -158,7 +170,7 @@ a {
 }
 
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28212, 165, 116, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 215, 0, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* Hero Section */
@@ -440,7 +452,7 @@ a {
 }
 
 .section.bg-light {
-    background: rgba(248, 246, 240, 0.9);
+    background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
 }
 
@@ -451,7 +463,7 @@ a {
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--dark-color);
+    color: var(--white);
     position: relative;
     display: inline-block;
 }
@@ -464,19 +476,19 @@ a {
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: var(--gradient-primary);
+    background: var(--accent-color);
     border-radius: 2px;
 }
 
 .section-subtitle {
     font-size: 1.1rem;
-    color: var(--text-light);
+    color: var(--white);
     margin-top: 1rem;
 }
 
 /* About Section */
 .about-content h3 {
-    color: var(--primary-color);
+    color: var(--accent-color);
     margin-bottom: 1.5rem;
 }
 
@@ -488,11 +500,11 @@ a {
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
-    color: var(--text-light);
+    color: var(--white);
 }
 
 .info-item i {
-    color: var(--primary-color);
+    color: var(--accent-color);
     margin-right: 1rem;
     width: 20px;
 }
@@ -589,9 +601,9 @@ a {
 
 /* Skills Section */
 .skill-category {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
-    border: 2px solid transparent;
+    border: 2px solid var(--accent-color);
     padding: 2rem;
     border-radius: var(--border-radius);
     text-align: center;
@@ -604,13 +616,13 @@ a {
     transform: translateY(-10px);
     box-shadow: var(--shadow-medium);
     border-color: var(--accent-color);
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .skill-icon {
     width: 80px;
     height: 80px;
-    background: var(--gradient-primary);
+    background: var(--gradient-accent);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -620,11 +632,11 @@ a {
 
 .skill-icon i {
     font-size: 2rem;
-    color: var(--white);
+    color: var(--dark-color);
 }
 
 .skill-category h4 {
-    color: var(--dark-color);
+    color: var(--white);
     margin-bottom: 1.5rem;
 }
 
@@ -635,8 +647,8 @@ a {
 
 .skill-list li {
     padding: 0.5rem 0;
-    color: var(--text-light);
-    border-bottom: 1px solid rgba(212, 165, 116, 0.1);
+    color: var(--white);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
 }
 
 .skill-list li:last-child {
@@ -656,7 +668,7 @@ a {
     top: 0;
     bottom: 0;
     width: 2px;
-    background: var(--gradient-primary);
+    background: var(--accent-color);
 }
 
 .timeline-item {
@@ -671,16 +683,16 @@ a {
     top: 0;
     width: 20px;
     height: 20px;
-    background: var(--primary-color);
+    background: var(--accent-color);
     border: 4px solid var(--white);
     border-radius: 50%;
     box-shadow: var(--shadow-light);
 }
 
 .timeline-content {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
-    border: 2px solid transparent;
+    border: 2px solid var(--accent-color);
     padding: 2rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-light);
@@ -691,25 +703,25 @@ a {
     transform: translateY(-5px);
     box-shadow: var(--shadow-medium);
     border-color: var(--accent-color);
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .timeline-header h4 {
-    color: var(--primary-color);
+    color: var(--accent-color);
     margin-bottom: 0.5rem;
 }
 
 .company {
     display: block;
     font-weight: 600;
-    color: var(--text-dark);
+    color: var(--white);
     margin-bottom: 0.5rem;
 }
 
 .duration {
     font-size: 0.9rem;
-    color: var(--text-light);
-    background: var(--light-color);
+    color: var(--dark-color);
+    background: var(--accent-color);
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     display: inline-block;
@@ -726,14 +738,14 @@ a {
 
 .timeline-body li {
     margin-bottom: 0.75rem;
-    color: var(--text-light);
+    color: var(--white);
 }
 
 /* Projects Section */
 .project-card {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
-    border: 2px solid transparent;
+    border: 2px solid var(--accent-color);
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--shadow-light);
@@ -745,12 +757,12 @@ a {
     transform: translateY(-10px);
     box-shadow: var(--shadow-heavy);
     border-color: var(--accent-color);
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .project-image {
     height: 200px;
-    background: var(--gradient-primary);
+    background: var(--gradient-accent);
     position: relative;
     overflow: hidden;
 }
@@ -778,13 +790,14 @@ a {
 }
 
 .project-content h4 {
-    color: var(--dark-color);
+    color: var(--white);
     margin-bottom: 1rem;
 }
 
 .project-content p {
     margin-bottom: 1.5rem;
     font-size: 0.9rem;
+    color: var(--white);
 }
 
 .project-tags {
@@ -794,8 +807,8 @@ a {
 }
 
 .tag {
-    background: var(--light-color);
-    color: var(--primary-color);
+    background: var(--accent-color);
+    color: var(--dark-color);
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -804,7 +817,7 @@ a {
 
 /* Contact Section */
 .contact-content {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
     border: 2px solid var(--accent-color);
     padding: 3rem;
@@ -821,7 +834,7 @@ a {
 .contact-icon {
     width: 60px;
     height: 60px;
-    background: var(--gradient-primary);
+    background: var(--gradient-accent);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -832,26 +845,30 @@ a {
 
 .contact-icon i {
     font-size: 1.5rem;
-    color: var(--white);
+    color: var(--dark-color);
 }
 
 .contact-info h5 {
-    color: var(--dark-color);
+    color: var(--white);
     margin-bottom: 0.5rem;
 }
 
 .contact-info a {
-    color: var(--primary-color);
+    color: var(--accent-color);
     font-weight: 500;
 }
 
 .contact-info a:hover {
-    color: var(--secondary-color);
+    color: var(--white);
 }
+
+
 
 /* Footer */
 .footer {
-    background: var(--dark-color);
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-top: 2px solid var(--accent-color);
     color: var(--white);
     padding: 2rem 0;
     text-align: center;
