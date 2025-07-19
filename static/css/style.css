@@ -15,7 +15,7 @@
     --shadow-heavy: 0 20px 60px rgba(255, 215, 0, 0.4);
     --transition: all 0.3s ease;
     --border-radius: 12px;
-    --current-bg: url('../images/bg-yellow.webp');
+    --current-bg: url('/static/images/bg-yellow.webp');
     --theme-secondary: #c09f5d;
     --theme-tertiary: #7c6139;
 }

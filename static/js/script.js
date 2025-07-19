@@ -436,7 +436,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const root = document.documentElement;
         const colors = newTheme.colors;
         
-        root.style.setProperty('--current-bg', `url('${newTheme.background}')`);
+        root.style.setProperty('--current-bg', `url('/${newTheme.background}')`);
         root.style.setProperty('--accent-color', colors.dominant);
         root.style.setProperty('--primary-color', colors.dominant);
         root.style.setProperty('--secondary-color', colors.palette[1] || colors.dominant);
