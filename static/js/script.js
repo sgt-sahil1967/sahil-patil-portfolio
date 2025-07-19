@@ -375,46 +375,46 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => {
             console.error('Error loading themes:', error);
-            // Fallback themes if JSON fails to load
+            // Bright fallback themes if JSON fails to load
             themes = [
                 {
                     name: 'yellow-theme',
                     background: 'static/images/bg-yellow.webp',
                     colors: {
-                        dominant: '#ffd700',
-                        palette: ['#ffd700', '#ffeb3b', '#c09f5d', '#7c6139', '#998d6a', '#97836c']
+                        dominant: '#ffeb3b',
+                        palette: ['#ffeb3b', '#fdd835', '#f9a825', '#ff6f00', '#ff8f00', '#ffa000']
                     }
                 },
                 {
                     name: 'orange-theme',
                     background: 'static/images/bg-orange.webp',
                     colors: {
-                        dominant: '#d2a38d',
-                        palette: ['#d2a38d', '#9c5b4d', '#8fa991', '#4f292c', '#6d8cb0', '#726973']
+                        dominant: '#ff5722',
+                        palette: ['#ff5722', '#ff7043', '#ff8a65', '#ffab40', '#ffcc02', '#ffc107']
                     }
                 },
                 {
                     name: 'purple-theme',
                     background: 'static/images/bg-purple.webp',
                     colors: {
-                        dominant: '#a18dbc',
-                        palette: ['#a18dbc', '#e19dac', '#6766b3', '#acb2e1', '#755ca5', '#60637a']
+                        dominant: '#e91e63',
+                        palette: ['#e91e63', '#f06292', '#f48fb1', '#ce93d8', '#ba68c8', '#9c27b0']
                     }
                 },
                 {
                     name: 'blue-theme',
                     background: 'static/images/bg-blue.webp',
                     colors: {
-                        dominant: '#779dbe',
-                        palette: ['#779dbe', '#d5c3b6', '#444f44', '#948a7c', '#9bbad2', '#6c8a93']
+                        dominant: '#00e5ff',
+                        palette: ['#00e5ff', '#18ffff', '#64ffda', '#1de9b6', '#00bcd4', '#26c6da']
                     }
                 },
                 {
                     name: 'green-theme',
                     background: 'static/images/bg-green.webp',
                     colors: {
-                        dominant: '#775e5b',
-                        palette: ['#775e5b', '#5a4448', '#2a1c2e', '#3b2958', '#523a76', '#6b645c']
+                        dominant: '#d500f9',
+                        palette: ['#d500f9', '#e040fb', '#ea80fc', '#f3e5f5', '#ce93d8', '#ba68c8']
                     }
                 }
             ];
