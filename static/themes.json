@@ -5,7 +5,7 @@
       "dominant": "#ffd700",
       "palette": [
         "#ffd700",
-        "#ffed4a", 
+        "#ffed4a",
         "#fff59d",
         "#ffc107",
         "#ff9800",
@@ -16,56 +16,56 @@
   "orange-theme": {
     "background": "static/images/bg-orange.webp",
     "colors": {
-      "dominant": "#ff6b35",
+      "dominant": "#703c41",
       "palette": [
-        "#ff6b35",
-        "#ff8a50",
-        "#ffb74d", 
-        "#e65100",
-        "#bf360c",
-        "#d84315"
+        "#663539",
+        "#ffd3b7",
+        "#b9ddbc",
+        "#ca7664",
+        "#8db6e4",
+        "#948895"
       ]
     }
   },
   "purple-theme": {
     "background": "static/images/bg-purple.webp",
     "colors": {
-      "dominant": "#e91e63",
+      "dominant": "#e4c4ff",
       "palette": [
-        "#e91e63",
-        "#f06292",
-        "#f8bbd9",
-        "#c2185b", 
-        "#ad1457",
-        "#880e4f"
+        "#debbf3",
+        "#ffd2e2",
+        "#807fe4",
+        "#969aec",
+        "#8f76da",
+        "#8d8b9f"
       ]
     }
   },
   "blue-theme": {
-    "background": "static/images/bg-blue.webp", 
+    "background": "static/images/bg-blue.webp",
     "colors": {
-      "dominant": "#00bcd4",
+      "dominant": "#627264",
       "palette": [
-        "#00bcd4",
-        "#26c6da",
-        "#4dd0e1",
-        "#00acc1",
-        "#0097a7",
-        "#006064"
+        "#586658",
+        "#fffdec",
+        "#9accf7",
+        "#c0b2a1",
+        "#c9f1ff",
+        "#8bb3bf"
       ]
     }
   },
   "green-theme": {
     "background": "static/images/bg-green.webp",
     "colors": {
-      "dominant": "#9c27b0", 
+      "dominant": "#392541",
       "palette": [
-        "#9c27b0",
-        "#ab47bc",
-        "#ba68c8",
-        "#8e24aa",
-        "#7b1fa2",
-        "#4a148c"
+        "#34233a",
+        "#6b4f55",
+        "#8f6d69",
+        "#462e66",
+        "#62438f",
+        "#80776d"
       ]
     }
   }
