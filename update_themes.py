@@ -64,8 +64,8 @@ def update_themes():
         'orange-theme': {
             'background': 'static/images/bg-orange.webp',
             'colors': extract_and_brighten_colors('static/images/bg-orange.webp') or {
-                'dominant': '#ff6b35',  # Bright orange-red
-                'palette': ['#ff6b35', '#ff8a50', '#ffb74d', '#e65100', '#bf360c', '#d84315']
+                'dominant': '#ff914d',  # Bright orange-red
+                'palette': ['#ff914d', '#ff8a50', '#ffb74d', '#e65100', '#bf360c', '#d84315']
             }
         },
         'purple-theme': {

@@ -608,23 +608,23 @@ a {
 }
 
 .code-keyword {
-    color: #569cd6;
+    color: #008cff;
 }
 
 .code-class {
-    color: #4ec9b0;
+    color: #00ffcc;
 }
 
 .code-function {
-    color: #dcdcaa;
+    color: #ffff1a;
 }
 
 .code-param {
-    color: #9cdcfe;
+    color: #6933ff;
 }
 
 .code-string {
-    color: #ce9178;
+    color: #ff4800;
 }
 
 @keyframes float {
@@ -802,6 +802,18 @@ a {
     background: var(--gradient-accent);
     position: relative;
     overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
 }
 
 .project-image img {
